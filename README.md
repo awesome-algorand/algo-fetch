@@ -21,14 +21,32 @@ Projects like algokit, algosdk and algo-models could benefit from this approach 
 This approach is already used in algosdk but only for the models, we purpose also exporting the interface from the operations
 definition.
 
-# Get Started[WIP]
+# TODO:
+
+- [ ] Add tests
+- [ ] Regenerate library without Class closures
+- [ ] Allow decoding of `format=msgpack`
+- [ ] Handle BigInt conversions
+
+# Get Started
+
+Login to [Github's Package Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry)
+
 ```bash
-npm install @algofam/algod-fetch
-npm install @algofam/indexer-fetch
-npm install @algofam/kmd-fetch
+npm login --scope=@awesome-algorand --auth-type=legacy --registry=https://npm.pkg.github.com
 ```
 
-# Contributing[WIP]
+Install one of the packages
+
+```bash
+npm install @awesome-algorand/algod-fetch
+npm install @awesome-algorand/indexer-fetch
+npm install @awesome-algorand/kmd-fetch
+```
+
+See the [Reference Documentation](https://awesome-algorand.github.io/algo-fetch/) for more information
+
+# Contributing
 
 Clone the project
 
@@ -40,6 +58,12 @@ Install the dependencies
 
 ```bash
 npm install
+```
+
+Run the release without publishing
+
+```bash
+./bin/publisher.js --skipNpm
 ```
 
 ## Commands
@@ -85,8 +109,3 @@ Runs the linter
 ```bash
 npm run lint
 ```
-
-# TODO:
-
-- [ ] Automate the generation of the clients when the openapi schema changes, look into the action
-- [ ] Add tests
