@@ -13,7 +13,7 @@ env:
 permissions:
   pages: write
 jobs:
-  npm-publish:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -29,6 +29,9 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build -w @awesome-algorand/core-fetch
+      - run: node ./bin/publisher.js --skipNpm
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build with Astro
         run: npm run build
         working-directory: ${{ env.BUILD_PATH }}
@@ -40,7 +43,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    needs: npm-publish
+    needs: build
     runs-on: ubuntu-latest
     name: Deploy
     steps:

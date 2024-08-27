@@ -51,7 +51,7 @@ export async function release({
     tag, // v3.0.0-stable
     repo, // algorand/go-algorand
     schema, // daemon/algod/api/algod.oas3.yml
-}, pkg, token) {
+}, pkg, token, skipNpm) {
     console.log(`Current ${name} Version: ${pkg.version}`);
     const schemaUrl = `https://raw.githubusercontent.com/${repo}/${tag}/${schema}`;
     if (version.join('.') !== pkg.version) {
@@ -94,7 +94,7 @@ const client = new ${name}({
             pkg.version = `${major}.${minor}.${patch}`;
             await writeFile(resolve(packagePath, "package.json"), JSON.stringify(pkg, null, 2));
             await build(packagePath, schemaUrl, name);
-            await publish(packagePath);
+            if(skipNpm !== true) await publish(packagePath) ;
             console.log(`Deployed ${name} ${major}.${minor}.${patch}`);
         } catch (e) {
             console.error(e);

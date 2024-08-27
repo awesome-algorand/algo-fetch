@@ -69,7 +69,7 @@ async function releaseAlgodKMD() {
             tag: `v${major}.${minor}.${patch}-stable`,
             repo: GO_ALGORAND_REPO,
             schema: `daemon/algod/api/algod.oas3.yml`,
-        }, algod, process.env.GITHUB_TOKEN)
+        }, algod, process.env.GITHUB_TOKEN, typeof process.argv[2] !== 'undefined')
     } catch (e) {
         console.error(e);
     }
@@ -88,7 +88,7 @@ async function releaseAlgodKMD() {
             tag: `v${major}.${minor}.${patch}-stable`,
             repo: GO_ALGORAND_REPO,
             schema: `daemon/kmd/api/swagger.json`,
-        }, kmd, process.env.GITHUB_TOKEN)
+        }, kmd, process.env.GITHUB_TOKEN, typeof process.argv[2] !== 'undefined')
     } catch (e) {
         console.error(e);
     }
@@ -118,7 +118,7 @@ async function releaseIndexer(){
             tag,
             repo: INDEXER_REPO,
             schema: `api/indexer.oas3.yml`,
-        }, indexer, process.env.GITHUB_TOKEN)
+        }, indexer, process.env.GITHUB_TOKEN, typeof process.argv[2] !== 'undefined')
     } catch (e) {
         console.error(e);
     }
