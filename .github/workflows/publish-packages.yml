@@ -9,12 +9,10 @@ concurrency:
 env:
   BUILD_PATH: docs
 permissions:
-  pages: write
   issues: write
   contents: write
   packages: write
   pull-requests: write
-  id-token: write
 jobs:
   npm-publish:
     runs-on: ubuntu-latest
