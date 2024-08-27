@@ -1,8 +1,10 @@
-name: Publish Package
+name: Publish Documentation
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 0 * * *"
+  push:
+    paths:
+      - docs/**
+      - packages/**
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -10,11 +12,6 @@ env:
   BUILD_PATH: docs
 permissions:
   pages: write
-  issues: write
-  contents: write
-  packages: write
-  pull-requests: write
-  id-token: write
 jobs:
   npm-publish:
     runs-on: ubuntu-latest
@@ -32,11 +29,21 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build -w @awesome-algorand/core-fetch
-      - run: node ./bin/publisher.js
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Commit
-        run: |
-          git diff --quiet && git diff --staged --quiet || git commit -am "🔖 Release ${{ github.sha }}"
-          git push
+      - name: Build with Astro
+        run: npm run build
+        working-directory: ${{ env.BUILD_PATH }}
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.BUILD_PATH }}/dist
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: npm-publish
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
