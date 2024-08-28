@@ -1,0 +1,36 @@
+{
+  "rnd": 1,
+  "prev": "blk-DPCGNQFB3PZCIGUG6MBL6ASVM3RD33UXJX65XURCJL5WIIRUAJJQ",
+  "seed": "sBoIA83cUpa8jNOdqmGClw85y0bYcFhfmKzrnxmhgdc=",
+  "txn": "LN9CHN+zm1OHdoF2SPpftJW9YI2J/F0Zv/FJsNdAheA=",
+  "ts": 1560210480,
+  "gen": "testnet-v1.0",
+  "gh": "SGO1GKSzyE7IEPItTxCByw9x8FmnrCDexi9/cOUJOiI=",
+  "fees": "A7NMWS3NT3IUDMLVO26ULGXGIIOUQ3ND2TXSER6EBGRZNOBOUIQXHIBGDE",
+  "rwd": "7777777777777777777777777777777777777777777777777774MSJUVU",
+  "rate": 250000000,
+  "frac": 250000000,
+  "rwcalr": 500000,
+  "proto": "https://github.com/algorand/spec/tree/a26ed78ed8f834e2b9ccb6eb7d3ee9f629a6e622",
+  "nextproto": "https://github.com/algorand/spec/tree/22726c9dcd12d9cddce4a8bd7e8ccaa707f74101",
+  "nextyes": 1,
+  "nextbefore": 10001,
+  "nextswitch": 20001,
+  "upgradeprop": "https://github.com/algorand/spec/tree/22726c9dcd12d9cddce4a8bd7e8ccaa707f74101",
+  "upgradeyes": true,
+  "txns": [
+    {
+      "txn": {
+        "type": "pay",
+        "snd": "GD64YIY3TWGDMCNPP553DZPPR6LDUSFQOIJVFDPPXWEG3FVOJCCDBBHU5A",
+        "lv": 1000,
+        "fee": 10000,
+        "amt": 100000000,
+        "rcv": "3NVE2MK2QYZQFOZ5XIRQTM7JRHNPUBV7QKLYLT7OO6QXFHXMRIAUXXNCBM"
+      },
+      "sig": "tlAccbsxpTazfxt3Yu69Li98QvH6nDAPNHdU8LUkpBLxu1umNePq0NwfHbrtv3hW4dxKQw32SbszeMrv5X64Cg==",
+      "hgi": true,
+      "hgh": true
+    }
+  ]
+}

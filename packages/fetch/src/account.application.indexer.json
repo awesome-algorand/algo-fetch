@@ -1,0 +1,22 @@
+{
+  "apps-local-states": [
+    {
+      "id": 62368684,
+      "schema": {
+        "num-uint": 16
+      },
+      "key-value": [
+        {
+          "key": "S4jy0Gb7ZcISjP2zb5geqse5Tl0YxJsqRg6gs6LDLoRlAAAAAACflz0=",
+          "value": {
+            "type": 2,
+            "uint": 59903
+          }
+        }
+      ],
+      "opted-in-at-round": 22687686
+    }
+  ],
+  "current-round": 43296085,
+  "next-token": "62368684"
+}

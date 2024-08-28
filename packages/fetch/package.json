@@ -1,0 +1,42 @@
+{
+  "name": "@awesome-algorand/fetch",
+  "version": "0.0.1",
+  "description": "Unified Fetch Interface",
+  "keywords": [
+    "hey-api",
+    "fetch",
+    "rpc"
+  ],
+  "type": "module",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    }
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "dev": "vitest --ui --coverage",
+    "test": "vitest",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "docs": "typedoc --out docs src",
+    "coverage": "vitest run --coverage",
+    "build": "tsc && tsc-alias -p tsconfig.json -f"
+  },
+  "author": "Awesome Algorand",
+  "license": "Unlicense",
+  "devDependencies": {
+    "@hey-api/openapi-ts": "^0.48.2",
+    "async-mutex": "^0.5.0"
+  },
+  "peerDependencies": {
+    "@awesome-algorand/algod-fetch": "^3.25.0",
+    "@awesome-algorand/indexer-fetch": "^3.5.0"
+  }
+}

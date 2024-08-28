@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "ignoreDeprecations": "5.0",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "preserveValueImports": true,
+    "module": "esnext",
+    "target": "esnext",
+    "declaration": true,
+    "outDir": "./lib"
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "typedocOptions": {
+    "entryPoints": [
+      "src/index.ts"
+    ],
+    "out": "./docs"
+  }
+}
