@@ -1,6 +1,6 @@
 {
   "name": "@awesome-algorand/algod-fetch",
-  "version": "3.26.0",
+  "version": "3.27.0",
   "description": "Fetch client for Algod RPC",
   "keywords": [
     "algorand",
